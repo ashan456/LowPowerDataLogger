@@ -20,6 +20,20 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="z4vIb42apY9Es0EtUEQU-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="xrvsUshUiSGQ0NTUIbD5-1" target="z4vIb42apY9Es0EtUEQU-19">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="340" />
+              <mxPoint x="370" y="340" />
+              <mxPoint x="370" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="z4vIb42apY9Es0EtUEQU-32" value="&lt;b&gt;GPIO&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="z4vIb42apY9Es0EtUEQU-31">
+          <mxGeometry x="-0.0787" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="xrvsUshUiSGQ0NTUIbD5-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Microcontroller&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
           <mxGeometry x="400" y="240" width="120" height="80" as="geometry" />
         </mxCell>
@@ -85,10 +99,15 @@
           <mxGeometry x="670" y="530" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="z4vIb42apY9Es0EtUEQU-19" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Battery Voltage Sensing&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;circuit&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="240" y="400" width="80" height="80" as="geometry" />
+          <mxGeometry x="220" y="380" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="z4vIb42apY9Es0EtUEQU-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.875;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="z4vIb42apY9Es0EtUEQU-19" target="xrvsUshUiSGQ0NTUIbD5-1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="400" />
+              <mxPoint x="340" y="310" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="z4vIb42apY9Es0EtUEQU-21" value="ADC" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;fontSize=12;" vertex="1" connectable="0" parent="z4vIb42apY9Es0EtUEQU-20">
           <mxGeometry x="-0.0016" y="1" relative="1" as="geometry">
