@@ -101,6 +101,11 @@
         <mxCell id="z4vIb42apY9Es0EtUEQU-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.004;entryY=0.169;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="z4vIb42apY9Es0EtUEQU-23" target="xrvsUshUiSGQ0NTUIbD5-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="z4vIb42apY9Es0EtUEQU-28" value="UART" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="z4vIb42apY9Es0EtUEQU-24">
+          <mxGeometry x="-0.0329" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="z4vIb42apY9Es0EtUEQU-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="z4vIb42apY9Es0EtUEQU-25" target="xrvsUshUiSGQ0NTUIbD5-1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
