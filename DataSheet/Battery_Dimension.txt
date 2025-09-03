@@ -1,0 +1,3 @@
+Length = 50mm
+Width = 34mm
+Height = 7 mm

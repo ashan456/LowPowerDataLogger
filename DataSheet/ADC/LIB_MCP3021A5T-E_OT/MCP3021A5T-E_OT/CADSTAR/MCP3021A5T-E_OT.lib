@@ -1,0 +1,18 @@
+.MCP3021A5T-E_OT :1 ;Analog to Digital Converters - ADC 10-bit I2C Sgl Chnl
+SOT95P280X145-5N
+*STM IC
+*NGS
+*PLB 1="VDD" 2="VSS" 3="AIN" 4="SDA" 5="SCL"
+*MXP 5
+*DFN MCP3021A5T-E_OT
+~!Manufacturer_Name (Microchip)
+~!Manufacturer_Part_Number (MCP3021A5T-E/OT)
+~!Mouser Part Number (579-MCP3021A5T-E/OT)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP3021A5T-E-OT?qs=gySgac5WNsGj4n43R%252BIXjw%3D%3D)
+~!Arrow Part Number (MCP3021A5T-E/OT)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/mcp3021a5t-eot/microchip-technology?utm_currency=USD&region=nac)
+~!Link Datasheet (https://lcsc.componentsearchengine.com/Datasheets/2/MCP3021A5T-E_OT.pdf)
+~!Height (1.45mm)
+~!3D_Model (MCP3021A5T-E_OT)
+MCP3021A5T-E_OT
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 

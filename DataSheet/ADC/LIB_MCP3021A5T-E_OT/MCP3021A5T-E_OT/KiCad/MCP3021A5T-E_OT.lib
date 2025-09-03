@@ -1,0 +1,28 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model MCP3021A5T-E_OT
+#/3671539/396967/2.50/5/3/Integrated Circuit
+DEF MCP3021A5T-E_OT IC 0 30 Y Y 1 F N
+F0 "IC" 850 300 50 H V L CNN
+F1 "MCP3021A5T-E_OT" 850 200 50 H V L CNN
+F2 "SOT95P280X145-5N" 850 100 50 H I L CNN
+F3 "https://lcsc.componentsearchengine.com/Datasheets/2/MCP3021A5T-E_OT.pdf" 850 0 50 H I L CNN
+F4 "Analog to Digital Converters - ADC 10-bit I2C Sgl Chnl" 850 -100 50 H I L CNN "Description"
+F5 "1.45" 850 -200 50 H I L CNN "Height"
+F6 "Microchip" 850 -300 50 H I L CNN "Manufacturer_Name"
+F7 "MCP3021A5T-E/OT" 850 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "579-MCP3021A5T-E/OT" 850 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP3021A5T-E-OT?qs=gySgac5WNsGj4n43R%252BIXjw%3D%3D" 850 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "MCP3021A5T-E/OT" 850 -700 50 H I L CNN "Arrow Part Number"
+F11 "https://www.arrow.com/en/products/mcp3021a5t-eot/microchip-technology?utm_currency=USD&region=nac" 850 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X VDD 1 0 0 200 R 50 50 0 0 P
+X VSS 2 0 -100 200 R 50 50 0 0 P
+X AIN 3 0 -200 200 R 50 50 0 0 P
+X SDA 4 1000 0 200 L 50 50 0 0 P
+X SCL 5 1000 -100 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 800 100 800 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
