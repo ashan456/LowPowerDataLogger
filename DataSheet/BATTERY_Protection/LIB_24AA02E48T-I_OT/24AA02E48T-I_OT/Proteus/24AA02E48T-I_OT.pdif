@@ -1,0 +1,128 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "24AA02E48T-I_OT"
+   (description "2K 256X8 1.8V Ser.EEPROM,24AA02E48T-I/OT")
+   (family "ANA")
+   (package "SOT95P270X145-5N")
+   (attribute "Datasheet Link" "https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-11/sf-000234844.pdf")
+   (attribute "Geometry.Height" "1.45mm")
+   (attribute "Manufacturer_Name" "Microchip")
+   (attribute "Manufacturer_Part_Number" "24AA02E48T-I/OT")
+   (attribute "Mouser Part Number" "579-24AA02E48TIOT")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Microchip-Technology/24AA02E48T-I-OT?qs=h8kCHL4kpM5dzsPTuTrxSQ%3D%3D")
+   (attribute "Arrow Part Number" "24AA02E48T-I/OT")
+   (attribute "Arrow Price/Stock" "https://www.arrow.com/en/products/24aa02e48t-iot/microchip-technology?utm_currency=USD&region=nac")
+   (gate
+    (symbol "24AA02E48T-I_OT")
+    (pin "SCL" 1 PS)
+    (pin "VSS" 2 PS)
+    (pin "SDA" 3 PS)
+    (pin "VCC" 4 PS)
+    (pin "NC" 5 NC)
+   )
+  )
+  (symbol "24AA02E48T-I_OT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 800 100) (pt 800 -300) (pt 200 -300) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1000 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1000 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "SOT95P270X145-5N"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed true)
+      (pt -2.2 1.8)
+      (pt 2.2 1.8)
+      (pt 2.2 -1.8)
+      (pt -2.2 -1.8)
+      (pt -2.2 1.8))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -0.775 1.45)
+      (pt 0.775 1.45)
+      (pt 0.775 -1.45)
+      (pt -0.775 -1.45)
+      (pt -0.775 1.45))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -0.775 0.5)
+      (pt 0.175 1.45))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -0.2 1.45)
+      (pt 0.2 1.45)
+      (pt 0.2 -1.45)
+      (pt -0.2 -1.45)
+      (pt -0.2 1.45))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -1.95 1.5)
+      (pt -0.55 1.5))))
+   (leg 1 (pt -1.25 0.95) (padstack 0))
+   (leg 2 (pt -1.25 0) (padstack 0))
+   (leg 3 (pt -1.25 -0.95) (padstack 0))
+   (leg 4 (pt 1.25 -0.95) (padstack 0))
+   (leg 5 (pt 1.25 0.95) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.6 1.4 0 0 0))
+   )
+   (model "24AA02E48T-I_OT.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

@@ -1,0 +1,9 @@
+WP,HOLD short - Pull to  High via 10K
+CS - Pull to  High via 10K
+CLK - Pull Down via 100K
+DI -  Pull Down via 100K
+DO -  Pull Down via 100K
+
+
+battery voltage resitiro devider - Replace with ulp ADC
+ 

@@ -1,0 +1,18 @@
+.24AA02E48T-I_OT :1 ;2K 256X8 1.8V Ser.EEPROM,24AA02E48T-I/OT
+SOT95P270X145-5N
+*STM IC
+*NGS
+*PLB 1="SCL" 2="VSS" 3="SDA" 4="VCC" 5="NC"
+*MXP 5
+*DFN 24AA02E48T-I_OT
+~!Manufacturer_Name (Microchip)
+~!Manufacturer_Part_Number (24AA02E48T-I/OT)
+~!Mouser Part Number (579-24AA02E48TIOT)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Microchip-Technology/24AA02E48T-I-OT?qs=h8kCHL4kpM5dzsPTuTrxSQ%3D%3D)
+~!Arrow Part Number (24AA02E48T-I/OT)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/24aa02e48t-iot/microchip-technology?utm_currency=USD&region=nac)
+~!Link Datasheet (https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-11/sf-000234844.pdf)
+~!Height (1.45mm)
+~!3D_Model (24AA02E48T-I_OT)
+"24AA02E48T-I_OT"
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 

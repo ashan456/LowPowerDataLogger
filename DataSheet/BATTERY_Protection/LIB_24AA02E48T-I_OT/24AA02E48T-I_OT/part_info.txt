@@ -1,0 +1,9 @@
+Manufacturer=Microchip
+PartNumber=24AA02E48T-I/OT
+PartCategory=Integrated Circuit
+PackageCategory=SOT23 (5-Pin)
+PinCount=5
+Version=5.1
+Released=2015-04-16 09:48:08
+Downloaded=2025-09-23 04:34:53
+3D=Y

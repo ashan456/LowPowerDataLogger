@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 24AA02E48T-I_OT
+D 2K 256X8 1.8V Ser.EEPROM,24AA02E48T-I/OT
+K
+F https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-11/sf-000234844.pdf
+$ENDCMP
+#
+#End Doc Library

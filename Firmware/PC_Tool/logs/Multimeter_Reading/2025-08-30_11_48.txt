@@ -1,1 +1,5 @@
-Battery_Voltage = 4.10V
+Battery_Voltage (V)     Date
+ 
+4.10                   2025-08-30
+4.066                  2025-09-03
+
