@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=ST_PIN Pin=B1-10
+Change Component Footprint: Designator=R3 Old Footprint=Res_0603 New Footprint=RES_0402
+Added Component: Designator=R40(RES_0402)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RC0805FR-07330RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "2012 Rohm Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RC0805FR-07330RL/Yageo/view-part/106115/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=ST_PIN Pin=R40-2
+Added Pin To Net: NetName=ST_PWR Pin=B1-10
+Added Pin To Net: NetName=ST_PWR Pin=R40-1
+Added Net: Name=ST_PWR
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=TopDesign Member=Component R40 0 Ohm

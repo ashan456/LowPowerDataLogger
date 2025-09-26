@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=BTN Pin=B1-13
+Removed Pin From Net: NetName=BTN Pin=R8-2
+Change Net Name : Old Net Name=BTN New Net Name=PB_IN
+Added Pin To Net: NetName=BTN Pin=B1-13
+Added Pin To Net: NetName=BTN Pin=R8-2
+Added Net: Name=BTN
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=Battery_Protection Member=Component B5 DW03

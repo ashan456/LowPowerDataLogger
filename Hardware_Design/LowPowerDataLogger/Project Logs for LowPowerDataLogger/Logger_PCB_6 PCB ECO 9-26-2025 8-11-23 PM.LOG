@@ -1,0 +1,6 @@
+Removed Member From Class: ClassName=POWER_NET Member=NetB7_3
+Change Net Name : Old Net Name=NetB7_3 New Net Name=REG_IN
+Change Net Name : Old Net Name=NetF1_1 New Net Name=M_SW
+Change Net Name : Old Net Name=NetJ1_1 New Net Name=IND_LED
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=POWER_NET Member=Wire REG_IN

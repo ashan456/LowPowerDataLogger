@@ -1,0 +1,16 @@
+Added Component: Designator=J?(USB_Micro_B_90_MOLEX_1051330011)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/1051330011/Molex/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Molex"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1051330011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/1051330011/Molex/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBUS Pin=J?-1
+Added Pin To Net: NetName=USB_PRG_N Pin=J?-2
+Added Pin To Net: NetName=USB_PRG_P Pin=J?-3
+Added Pin To Net: NetName=GND Pin=J?-5
+Added Pin To Net: NetName=GND Pin=J?-SH1
+Added Pin To Net: NetName=GND Pin=J?-SH2
+Added Pin To Net: NetName=GND Pin=J?-SH3
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=USB_CON Member=Component J? 1051330011
