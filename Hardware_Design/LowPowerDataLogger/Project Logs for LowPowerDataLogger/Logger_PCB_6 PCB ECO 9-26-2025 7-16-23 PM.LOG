@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=3V3D Pin=FB1-2
+Removed Pin From Net: NetName=3V3_ESP Pin=J8-1
+Added Pin To Net: NetName=3V3_ESP Pin=B1-3
+Added Pin To Net: NetName=3V3D Pin=J8-1
+Added Pin To Net: NetName=NetFB1_2 Pin=FB1-2
+Added Pin To Net: NetName=NetFB1_2 Pin=J8-2
+Added Net: Name=NetFB1_2
+Add Class: Class already exists: Designator

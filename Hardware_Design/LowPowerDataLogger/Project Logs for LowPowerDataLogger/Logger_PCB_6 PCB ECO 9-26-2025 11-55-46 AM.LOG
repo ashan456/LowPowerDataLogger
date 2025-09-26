@@ -1,0 +1,10 @@
+Removed Member From Class: ClassName=Designator Member=C7
+Removed Member From Class: ClassName=Designator Member=C8
+Removed Member From Class: ClassName=Designator Member=D1
+Removed Member From Class: ClassName=Designator Member=R7
+Removed Member From Class: ClassName=Designator Member=R8
+Removed Member From Class: ClassName=Designator Member=SW3
+Change Component Designator: OldDesignator=Q NewDesignator=Q2
+Change Net Name : Old Net Name=NetQ_B New Net Name=NetQ2_B
+Change Net Name : Old Net Name=NetQ_C New Net Name=NetQ2_C
+Add Class: Class already exists: Designator

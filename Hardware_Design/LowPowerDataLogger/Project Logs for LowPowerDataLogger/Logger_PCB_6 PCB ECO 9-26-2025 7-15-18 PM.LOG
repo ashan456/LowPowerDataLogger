@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=3V3_ESP Pin=B1-3
+Added Component: Designator=J8(Pin_Header_2.54_2P)
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://componentsearchengine.com/Datasheets/2/61300211121.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Geometry.Height"; Value = "8.54mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LCSC"; Value = "C492401"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Wurth Elektronik"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "61300211121"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3_ESP Pin=J8-1
+Added Pin To Net: NetName=NetB1_3 Pin=B1-3
+Added Pin To Net: NetName=NetB1_3 Pin=J8-2
+Added Net: Name=NetB1_3
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=Designator Member=Component J8 Pin_Header_2.54_2P

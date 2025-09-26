@@ -1,0 +1,41 @@
+Removed Pin From Net: NetName=VBUS Pin=C26-2
+Removed Pin From Net: NetName=Vin2 Pin=C27-2
+Removed Pin From Net: NetName=VBUS Pin=D8-1
+Removed Pin From Net: NetName=Vin2 Pin=D9-1
+Removed Pin From Net: NetName=VBUS Pin=R34-1
+Removed Pin From Net: NetName=Vin2 Pin=R36-2
+Removed Pin From Net: NetName=VBUS Pin=TP2-TP?
+Removed Pin From Net: NetName=Vin2 Pin=TP4-TP?
+Added Component: Designator=R38(RES_0402)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RC0805FR-07330RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "2012 Rohm Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RC0805FR-07330RL/Yageo/view-part/106115/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=R39(RES_0402)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Yageo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RC0805FR-07330RL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "2012 Rohm Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RC0805FR-07330RL/Yageo/view-part/106115/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBUS Pin=R38-1
+Added Pin To Net: NetName=Vin2 Pin=R39-1
+Added Pin To Net: NetName=NetC26_2 Pin=C26-2
+Added Pin To Net: NetName=NetC26_2 Pin=D8-1
+Added Pin To Net: NetName=NetC26_2 Pin=R34-1
+Added Pin To Net: NetName=NetC26_2 Pin=R38-2
+Added Pin To Net: NetName=NetC26_2 Pin=TP2-TP?
+Added Net: Name=NetC26_2
+Added Pin To Net: NetName=NetC27_2 Pin=C27-2
+Added Pin To Net: NetName=NetC27_2 Pin=D9-1
+Added Pin To Net: NetName=NetC27_2 Pin=R36-2
+Added Pin To Net: NetName=NetC27_2 Pin=R39-2
+Added Pin To Net: NetName=NetC27_2 Pin=TP4-TP?
+Added Net: Name=NetC27_2
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=Power_MUX Member=Component R38 DNP
+Added Member To Class: ClassName=Power_MUX Member=Component R39 DNP
