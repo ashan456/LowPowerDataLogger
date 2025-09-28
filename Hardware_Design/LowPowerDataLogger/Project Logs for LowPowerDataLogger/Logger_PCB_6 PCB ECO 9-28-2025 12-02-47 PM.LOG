@@ -1,0 +1,4 @@
+Change Component Designator: OldDesignator=R? NewDesignator=R41
+Change Component Designator: OldDesignator=R? NewDesignator=R42
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=USB_CON Member=Component R42 DNP

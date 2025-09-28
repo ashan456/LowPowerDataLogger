@@ -1,0 +1,4 @@
+Added Component: Designator=TP5(Test_Point)
+Added Pin To Net: NetName=BOOT Pin=TP5-TP?
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=Designator Member=Component TP5 boot
