@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\Academic\UOC\Reaserch\LowPowerDataLogger\Hardware_Design\LowPowerDataLogger\Logger_PCB_6.PcbDoc
 Date     : 9/29/2025
-Time     : 11:35:30 AM
+Time     : 8:08:13 PM
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
 Rule Violations :0
@@ -10,9 +10,7 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net USB_PRG_N Between Pad D2-6(7.364mm,38.818mm) on Top Layer [Unplated] And Pad D2-1(7.364mm,41.319mm) on Top Layer [Unplated] 
-   Violation between Un-Routed Net Constraint: Net USB_PRG_P Between Pad D2-4(5.463mm,38.818mm) on Top Layer [Unplated] And Pad D2-3(5.463mm,41.319mm) on Top Layer [Unplated] 
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -30,37 +28,24 @@ Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=6.3mm) (All)
 Rule Violations :0
 
 Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
-   Violation between Hole To Hole Clearance Constraint: (0.221mm < 0.254mm) Between Via (53.404mm,48.514mm) from Top Layer to Bottom Layer And Via (53.955mm,48.367mm) from Top Layer to Bottom Layer 
-   Violation between Hole To Hole Clearance Constraint: (0.163mm < 0.254mm) Between Via (53.955mm,48.367mm) from Top Layer to Bottom Layer And Via (54.102mm,47.875mm) from Top Layer to Bottom Layer 
-   Violation between Hole To Hole Clearance Constraint: (0.201mm < 0.254mm) Between Via (54.102mm,47.875mm) from Top Layer to Bottom Layer And Via (54.623mm,47.698mm) from Top Layer to Bottom Layer 
-   Violation between Hole To Hole Clearance Constraint: (0.199mm < 0.254mm) Between Via (55.107mm,48.82mm) from Top Layer to Bottom Layer And Via (55.562mm,48.514mm) from Top Layer to Bottom Layer 
-   Violation between Hole To Hole Clearance Constraint: (0.114mm < 0.254mm) Between Via (55.562mm,48.514mm) from Top Layer to Bottom Layer And Via (55.807mm,48.12mm) from Top Layer to Bottom Layer 
-   Violation between Hole To Hole Clearance Constraint: (0.251mm < 0.254mm) Between Via (55.807mm,48.12mm) from Top Layer to Bottom Layer And Via (56.261mm,48.514mm) from Top Layer to Bottom Layer 
-   Violation between Hole To Hole Clearance Constraint: (0.213mm < 0.254mm) Between Via (55.807mm,48.12mm) from Top Layer to Bottom Layer And Via (56.309mm,47.864mm) from Top Layer to Bottom Layer 
-Rule Violations :7
+Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.05mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.05mm) (IsPad),(All)
-   Violation between Silk To Solder Mask Clearance Constraint: (0.03mm < 0.05mm) Between Arc (6.16mm,20.828mm) on Top Overlay And Pad R32-2(5.79mm,20.13mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.03mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.05mm) Between Pad J8-2(40.831mm,43.752mm) on Multi-Layer And Text "FB1" (40.404mm,46.556mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Silk to Silk (Clearance=0.1mm) (All),(All)
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.1mm) Between Text "FB1" (40.404mm,46.556mm) on Top Overlay And Track (39.485mm,45.097mm)(42.176mm,45.097mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Via (7.303mm,24.638mm) from Top Layer to Bottom Layer 
-   Violation between Net Antennae: Via (7.303mm,25.337mm) from Top Layer to Bottom Layer 
-   Violation between Net Antennae: Via (8.065mm,24.638mm) from Top Layer to Bottom Layer 
-Rule Violations :3
+Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 
-Violations Detected : 15
+Violations Detected : 0
 Waived Violations : 0
 Time Elapsed        : 00:00:01
