@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=R41 Old Footprint=RES_0402 New Footprint=Res_0603
+Change Component Footprint: Designator=R42 Old Footprint=RES_0402 New Footprint=Res_0603
+Add Class: Class already exists: Designator
