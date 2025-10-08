@@ -1,0 +1,6 @@
+Added Component: Designator=J10(1x3_Header)
+Added Pin To Net: NetName=GND Pin=J10-1
+Added Pin To Net: NetName=RX_USB Pin=J10-2
+Added Pin To Net: NetName=TX_USB Pin=J10-3
+Add Class: Class already exists: Designator
+Added Member To Class: ClassName=Designator Member=Component J10 1x3_Header

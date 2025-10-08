@@ -1,0 +1,11 @@
+Change Component Designator: OldDesignator=C? NewDesignator=C1
+Change Component Designator: OldDesignator=D? NewDesignator=D1
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=R? NewDesignator=R2
+Change Component Designator: OldDesignator=SW? NewDesignator=SW1
+Change Net Name : Old Net Name=NetC?_2 New Net Name=NetC1_2
+Change Net Name : Old Net Name=NetD?_1 New Net Name=NetD1_1
+Added Member To Class: ClassName=Sheet1 Member=Component J2 USB_MICRO_B_MOLEX_1050170001
+Added Member To Class: ClassName=Sheet1 Member=Component R1 0 Ohm

@@ -338,7 +338,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document18]
-DocumentPath=CAMtastic_CAM.Cam
+DocumentPath=Project Outputs for LowPowerDataLogger\CAMtastic_CAM.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -355,7 +355,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document19]
-DocumentPath=CAMtastic_NC.Cam
+DocumentPath=Project Outputs for LowPowerDataLogger\CAMtastic_NC.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
