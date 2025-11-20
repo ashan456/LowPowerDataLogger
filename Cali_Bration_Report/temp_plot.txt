@@ -1,0 +1,44 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# ============================
+# Read the CSV file
+# ============================
+df = pd.read_csv("temp_cal.csv")
+
+# Clean the "Expanded Uncertainty" column (convert "±0.20" → 0.20)
+df["Expanded Uncertainty, U (°C)"] = (
+    df["Expanded Uncertainty, U (°C)"]
+    .astype(str)
+    .str.replace("±", "", regex=False)
+    .astype(float)
+)
+
+# Extract data
+ref_temp = df["Reference Temperature (°C)"]
+dev_temp = df["Device Reading (°C)"]
+uncert = df["Expanded Uncertainty, U (°C)"]
+
+# ============================
+# PLOT (Scatter + 1:1 line)
+# ============================
+plt.figure(figsize=(8, 6))
+
+# Scatter points
+plt.scatter(ref_temp, dev_temp, s=80, label="Device Readings")
+
+# Error bars (vertical only)
+plt.errorbar(ref_temp, dev_temp, yerr=uncert, fmt='o', capsize=5, alpha=0.6)
+
+# 1:1 perfect line
+plt.plot(ref_temp, ref_temp, '--', color='gray', label="Ideal (Reference = Device)")
+
+# Labels & title
+plt.xlabel("Reference Temperature (°C)")
+plt.ylabel("Device Reading (°C)")
+plt.title("SHT45 Calibration Plot: Reference vs Device Reading")
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.tight_layout()
+plt.show()

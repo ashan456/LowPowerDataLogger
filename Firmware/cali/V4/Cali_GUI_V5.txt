@@ -1,0 +1,252 @@
+# sht45_calibration_display.py
+# Minimal calibration display:
+# - Connect to COM
+# - Big "Read Sensor Now" button (sends SENSE?)
+# - Large TIME / TEMP (°C) / RH (%) readouts
+# - Parses: "OK T=28.08C RH=58.06% VBAT=4168mV"
+
+import tkinter as tk
+from tkinter import ttk, messagebox
+from datetime import datetime
+import threading, queue, time, re
+import serial, serial.tools.list_ports
+
+BAUD = 115200
+
+OK_SENSE_RE = re.compile(
+    r"""^OK\s+T=([\-0-9.]+)C\s+RH=([\-0-9.]+)%\s+VBAT=([0-9]+)mV""",
+    re.IGNORECASE,
+)
+
+class CalibGUI:
+    def __init__(self, root):
+        self.root = root
+        root.title("SHT45 Calibration Display")
+
+        # --- FONTS (big & clear) ---
+        self.label_font = ("Segoe UI", 22, "bold")
+        self.value_font = ("Consolas", 36, "bold")    # large reading
+        self.button_font = ("Segoe UI", 18, "bold")
+
+        # --- State ---
+        self.ser = None
+        self.reader_thread = None
+        self.reader_stop = threading.Event()
+        self.q = queue.Queue()
+
+        # --- Top: connection ---
+        top = ttk.Frame(root, padding=10)
+        top.grid(row=0, column=0, sticky="ew")
+        top.columnconfigure(3, weight=1)
+
+        ttk.Label(top, text="Port:", font=("Segoe UI", 11, "bold")).grid(row=0, column=0, sticky="w")
+        self.port_combo = ttk.Combobox(top, width=20, state="readonly", values=self.list_ports())
+        self.port_combo.grid(row=0, column=1, sticky="w", padx=(6, 10))
+        ttk.Button(top, text="Refresh", command=self.refresh_ports).grid(row=0, column=2, sticky="w")
+        self.connect_btn = ttk.Button(top, text="Connect", command=self.connect)
+        self.connect_btn.grid(row=0, column=3, sticky="e")
+
+        # --- Middle: BIG button ---
+        mid = ttk.Frame(root, padding=(10, 0, 10, 10))
+        mid.grid(row=1, column=0, sticky="ew")
+        mid.columnconfigure(0, weight=1)
+
+        self.read_btn = tk.Button(
+            mid, text="READ SENSOR NOW",
+            command=self.sense_now,
+            font=self.button_font, relief="raised",
+            height=2  # tall
+        )
+        self.read_btn.grid(row=0, column=0, sticky="ew", pady=(6, 10), ipady=10)
+
+        # --- Large readout panel ---
+        panel = ttk.Frame(root, padding=10)
+        panel.grid(row=2, column=0, sticky="nsew")
+        for c in range(6): panel.columnconfigure(c, weight=1)
+
+        # TIME
+        ttk.Label(panel, text="TIME", font=self.label_font, anchor="center").grid(row=0, column=0, columnspan=2, sticky="ew")
+        self.val_time = ttk.Label(panel, text="—", font=self.value_font, anchor="center")
+        self.val_time.grid(row=1, column=0, columnspan=2, sticky="ew", pady=(0, 10))
+
+        # TEMP
+        ttk.Label(panel, text="TEMP (°C)", font=self.label_font, anchor="center").grid(row=0, column=2, columnspan=2, sticky="ew")
+        self.val_temp = ttk.Label(panel, text="—", font=self.value_font, anchor="center")
+        self.val_temp.grid(row=1, column=2, columnspan=2, sticky="ew", pady=(0, 10))
+
+        # RH
+        ttk.Label(panel, text="RH (%)", font=self.label_font, anchor="center").grid(row=0, column=4, columnspan=2, sticky="ew")
+        self.val_rh = ttk.Label(panel, text="—", font=self.value_font, anchor="center")
+        self.val_rh.grid(row=1, column=4, columnspan=2, sticky="ew", pady=(0, 10))
+
+        # --- Status bar ---
+        self.status = tk.StringVar(value="Disconnected")
+        ttk.Label(root, textvariable=self.status, anchor="w", padding=(10, 6)).grid(row=3, column=0, sticky="ew")
+
+        # --- Loop / close ---
+        root.after(100, self.poll_queue)
+        root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+        # Style: a bit more padding/size for clarity
+        style = ttk.Style(root)
+        try:
+            style.configure("TButton", padding=6)
+            style.configure("TLabel", padding=4)
+        except:
+            pass
+
+    # ---- Serial helpers ----
+    def list_ports(self):
+        return [p.device for p in serial.tools.list_ports.comports()]
+
+    def refresh_ports(self):
+        vals = self.list_ports()
+        self.port_combo["values"] = vals
+        if not self.port_combo.get() and vals:
+            self.port_combo.current(0)
+
+    def connect(self):
+        if self.ser and self.ser.is_open:
+            self.stop_reader_thread()
+            try: self.ser.close()
+            except: pass
+            self.ser = None
+            self.connect_btn.config(text="Connect")
+            self.status.set("Disconnected")
+            return
+
+        port = self.port_combo.get()
+        if not port:
+            messagebox.showwarning("Select Port", "Please select a COM port.")
+            return
+
+        try:
+            self.ser = serial.Serial(port, BAUD, timeout=0.2)
+            try:
+                self.ser.reset_input_buffer()
+                self.ser.reset_output_buffer()
+            except:
+                pass
+
+            self.connect_btn.config(text="Disconnect")
+            self.status.set(f"Connected: {port} @ {BAUD}")
+            self.start_reader_thread()
+
+            # Optional: auto initial sense to populate fields
+            self.root.after(400, self.sense_now)
+        except Exception as e:
+            self.ser = None
+            messagebox.showerror("Connection failed", str(e))
+            self.status.set("Disconnected")
+
+    def start_reader_thread(self):
+        self.reader_stop.clear()
+        self.reader_thread = threading.Thread(target=self.reader_loop, daemon=True)
+        self.reader_thread.start()
+
+    def stop_reader_thread(self):
+        self.reader_stop.set()
+        if self.reader_thread and self.reader_thread.is_alive():
+            self.reader_thread.join(timeout=1.0)
+        self.reader_thread = None
+        self.reader_stop.clear()
+
+    def reader_loop(self):
+        buf = bytearray()
+        while not self.reader_stop.is_set():
+            try:
+                if self.ser and self.ser.is_open:
+                    chunk = self.ser.read(256)
+                    if chunk:
+                        buf.extend(chunk)
+                        while b"\n" in buf:
+                            line, _, buf = buf.partition(b"\n")
+                            try:
+                                s = line.decode("utf-8", errors="ignore").strip("\r").strip()
+                            except:
+                                s = ""
+                            if s:
+                                self.q.put(("serial_line", s))
+                else:
+                    time.sleep(0.2)
+            except Exception as e:
+                self.q.put(("error", f"Serial error: {e}"))
+                time.sleep(0.5)
+
+    # ---- Commands ----
+    def send_line(self, text: str):
+        if not (self.ser and self.ser.is_open): 
+            return
+        try:
+            self.ser.write((text.strip() + "\n").encode("utf-8"))
+        except Exception as e:
+            self.q.put(("error", f"Write failed: {e}"))
+
+    def sense_now(self):
+        if not (self.ser and self.ser.is_open):
+            messagebox.showwarning("Not connected", "Connect to a COM port first.")
+            return
+        self.send_line("SENSE?")
+        self.status.set("Requesting reading…")
+
+    # ---- UI / parsing ----
+    def poll_queue(self):
+        try:
+            while True:
+                kind, payload = self.q.get_nowait()
+                if kind == "serial_line":
+                    self.handle_serial_line(payload)
+                elif kind == "error":
+                    self.status.set(payload)
+                self.q.task_done()
+        except queue.Empty:
+            pass
+        self.root.after(100, self.poll_queue)
+
+    def handle_serial_line(self, s: str):
+        # Parse exact SENSE? reply
+        m = OK_SENSE_RE.match(s)
+        if m:
+            try:
+                t_c = float(m.group(1))
+                rh = float(m.group(2))
+                # vbat = int(m.group(3))  # parsed but not displayed for calibration screen
+            except ValueError:
+                self.status.set("Parse error.")
+                return
+
+            ts = datetime.now().strftime("%H:%M:%S")
+            self.val_time.config(text=ts)
+            self.val_temp.config(text=f"{t_c:.2f}")
+            self.val_rh.config(text=f"{rh:.2f}")
+            self.status.set("Reading updated.")
+            return
+
+        # Friendly hello/ready lines
+        if ("hello" in s.lower()) or ("ready" in s.lower()) or s.upper().startswith("OK"):
+            self.status.set(s[:120])
+            return
+
+        # Fallback: show any other line in status
+        self.status.set(s[:120])
+
+    def on_close(self):
+        self.stop_reader_thread()
+        if self.ser and self.ser.is_open:
+            try: self.ser.close()
+            except: pass
+        self.root.destroy()
+
+def main():
+    root = tk.Tk()
+    try:
+        root.tk.call("tk", "scaling", 1.3)  # slightly larger UI
+    except:
+        pass
+    # Make window reasonably big by default
+    root.geometry("820x360")
+    app = CalibGUI(root)
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,69 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+# ==============================================================
+# CONFIGURATION
+# ==============================================================
+CSV_FILE = "ADC_Data.csv"   # <-- replace with your CSV filename
+# ==============================================================
+
+
+def main():
+    csv_path = Path(CSV_FILE)
+    if not csv_path.exists():
+        print(f"❌ File not found: {csv_path}")
+        return
+
+    # --- Load and normalize columns ---
+    df = pd.read_csv(csv_path)
+    df.columns = [c.strip().upper() for c in df.columns]
+
+    # Detect column names automatically
+    dmm_col = [c for c in df.columns if "DMM" in c][0]
+    adc_col = [c for c in df.columns if ("ADC" in c) or ("BATTERY" in c)][0]
+
+    # Convert to numeric
+    df["DMM_V"] = pd.to_numeric(df[dmm_col], errors="coerce")
+    df["ADC_V"] = pd.to_numeric(df[adc_col], errors="coerce")
+    df = df.dropna(subset=["DMM_V", "ADC_V"])
+
+    x = df["ADC_V"].to_numpy()
+    y = df["DMM_V"].to_numpy()
+
+    # --- Fit linear model (DMM = a * ADC + b) ---
+    a, b = np.polyfit(x, y, 1)
+
+    # Calculate R²
+    y_pred = a * x + b
+    ss_res = np.sum((y - y_pred) ** 2)
+    ss_tot = np.sum((y - np.mean(y)) ** 2)
+    r2 = 1 - ss_res / ss_tot if ss_tot != 0 else np.nan
+
+    # --- Print results ---
+    print("\n=== Linear Calibration (DMM = a * ADC + b) ===")
+    print(f"Slope (a): {a:.7f}")
+    print(f"Offset (b): {b:.7f} V")
+    print(f"R²: {r2:.6f}")
+    print("\nFirmware #define suggestions:")
+    print(f"#define CAL_SLOPE     {a:.7f}f")
+    print(f"#define CAL_OFFSET_V  {b:.7f}f")
+
+    # --- Plot ---
+    plt.figure(figsize=(6, 4))
+    plt.scatter(x, y, label="Measured Data", color="blue")
+    plt.plot(np.linspace(min(x), max(x), 100),
+             a * np.linspace(min(x), max(x), 100) + b,
+             color="red", label=f"Fit: DMM = {a:.4f}×ADC + {b:.4f}")
+    plt.xlabel("ADC Voltage (V)")
+    plt.ylabel("DMM Voltage (V)")
+    plt.title("ADC Calibration Fit")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+    main()

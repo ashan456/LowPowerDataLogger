@@ -1,0 +1,2 @@
+py -m PyInstaller --onefile --windowed .\logger_gui_bin2.py
+
